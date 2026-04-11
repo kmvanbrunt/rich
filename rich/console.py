@@ -1521,8 +1521,7 @@ class Console:
         Returns:
             List[ConsoleRenderable]: A list of things to render.
         """
-        from .pretty import Pretty as _Pretty
-        from .pretty import is_expandable as _is_expandable
+        from .pretty import Pretty, is_expandable
 
         renderables: List[ConsoleRenderable] = []
         _append = renderables.append
@@ -1564,9 +1563,9 @@ class Console:
             elif isinstance(renderable, ConsoleRenderable):
                 check_text()
                 append(renderable)
-            elif _is_expandable(renderable):
+            elif is_expandable(renderable):
                 check_text()
-                append(_Pretty(renderable, highlighter=_highlighter))
+                append(Pretty(renderable, highlighter=_highlighter))
             else:
                 append_text(_highlighter(str(renderable)))
 
