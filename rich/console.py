@@ -1521,7 +1521,8 @@ class Console:
         Returns:
             List[ConsoleRenderable]: A list of things to render.
         """
-        from .pretty import Pretty as _Pretty, is_expandable as _is_expandable
+        from .pretty import Pretty as _Pretty
+        from .pretty import is_expandable as _is_expandable
 
         renderables: List[ConsoleRenderable] = []
         _append = renderables.append
@@ -1895,8 +1896,7 @@ class Console:
 
     @staticmethod
     def _caller_frame_info(
-        offset: int,
-        currentframe: Callable[[], Optional[FrameType]] = sys._getframe,
+        offset: int, currentframe: Callable[[], Optional[FrameType]] | None = None
     ) -> Tuple[str, int, Dict[str, Any]]:
         """Get caller frame information.
 
@@ -1915,7 +1915,12 @@ class Console:
         # Ignore the frame of this local helper
         offset += 1
 
-        frame = currentframe()
+        if currentframe is None:
+            import inspect
+
+            frame = inspect.currentframe()
+        else:
+            frame = currentframe()
         if frame is not None:
             while offset and frame is not None:
                 frame = frame.f_back
