@@ -1521,7 +1521,13 @@ class Console:
         Returns:
             List[ConsoleRenderable]: A list of things to render.
         """
-        from .pretty import Pretty, is_expandable
+
+        def is_expandable(obj: object) -> bool:
+            """Check if an object is expandable by pretty printer."""
+            # Permit lazy loading
+            from .pretty import is_expandable as _is_expandable
+
+            return _is_expandable(obj)
 
         renderables: List[ConsoleRenderable] = []
         _append = renderables.append
@@ -1565,6 +1571,8 @@ class Console:
                 append(renderable)
             elif is_expandable(renderable):
                 check_text()
+                from .pretty import Pretty
+
                 append(Pretty(renderable, highlighter=_highlighter))
             else:
                 append_text(_highlighter(str(renderable)))
