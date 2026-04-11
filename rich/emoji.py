@@ -81,6 +81,8 @@ if __name__ == "__main__":  # pragma: no cover
 
     console = Console(record=True)
 
+    from ._emoji_codes import EMOJI
+
     columns = Columns(
         (f":{name}: {name}" for name in sorted(EMOJI.keys()) if "\u200d" not in name),
         column_first=True,
