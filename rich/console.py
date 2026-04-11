@@ -1903,7 +1903,7 @@ class Console:
 
     @staticmethod
     def _caller_frame_info(
-        offset: int, currentframe: Callable[[], Optional[FrameType]] | None = None
+        offset: int, currentframe: Optional[Callable[[], Optional[FrameType]]] = None
     ) -> Tuple[str, int, Dict[str, Any]]:
         """Get caller frame information.
 
