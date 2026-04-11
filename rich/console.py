@@ -2223,7 +2223,7 @@ class Console:
 
     def save_text(
         self,
-        path: Union[str, PathLike],
+        path: Union[str, PathLike[str]],
         *,
         clear: bool = True,
         styles: bool = False,
@@ -2320,7 +2320,7 @@ class Console:
 
     def save_html(
         self,
-        path: Union[str, PathLike],
+        path: Union[str, PathLike[str]],
         *,
         theme: Optional[TerminalTheme] = None,
         clear: bool = True,
@@ -2605,7 +2605,7 @@ class Console:
 
     def save_svg(
         self,
-        path: Union[str, PathLike],
+        path: Union[str, PathLike[str]],
         *,
         title: str = "Rich",
         theme: Optional[TerminalTheme] = None,
