@@ -1903,7 +1903,7 @@ class Console:
         Args:
             offset (int): the caller offset within the current frame stack.
             currentframe (Callable[[], Optional[FrameType]], optional): the callable to use to
-                retrieve the current frame. Defaults to ``sys._getframe``.
+                retrieve the current frame. Defaults to None, which will use ``inspect.currentframe()``.
 
         Returns:
             Tuple[str, int, Dict[str, Any]]: A tuple containing the filename, the line number and
