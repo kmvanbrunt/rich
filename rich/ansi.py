@@ -132,7 +132,6 @@ class AnsiDecoder:
         Yields:
             Text: Marked up Text.
         """
-
         for line in re.split(r"(?<=\n)", terminal_text):
             yield self.decode_line(line.rstrip("\n"))
 
