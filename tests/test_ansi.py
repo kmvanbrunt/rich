@@ -100,3 +100,5 @@ def test_decode_newlines():
     assert Text.from_ansi("Hello\nWorld").plain == "Hello\nWorld"
     assert Text.from_ansi("Hello\n\nWorld").plain == "Hello\n\nWorld"
     assert Text.from_ansi("Hello\nWorld\n").plain == "Hello\nWorld\n"
+    assert Text.from_ansi("Hello\nWorld\n\n").plain == "Hello\nWorld\n\n"
+    assert Text.from_ansi("\nHello\nWorld\n\n").plain == "Hello\nWorld\n\n"
