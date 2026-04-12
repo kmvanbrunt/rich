@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed empty print ignoring the `end` parameter
+- Fixed `Text.from_ansi` removing newlines https://github.com/Textualize/rich/pull/4076
 
 ## [14.3.4] - 2026-04-11
 
