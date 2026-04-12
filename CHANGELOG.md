@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Dropped support for Python3.9
+- Breaking change: Dropped support for Python3.9 https://github.com/Textualize/rich/pull/4075
 
 ### Fixed
 
