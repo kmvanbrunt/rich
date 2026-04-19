@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
-- Added `emoji` field to `console.ConsoleOptions` https://github.com/Textualize/rich/issues/4028
+- Fixed `ConsoleOptions` propagation https://github.com/Textualize/rich/issues/4028
 
 ## [15.0.0] - 2026-04-12
 
