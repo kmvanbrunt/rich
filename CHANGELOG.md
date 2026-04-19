@@ -10,6 +10,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Added `emoji` field to `console.ConsoleOptions` https://github.com/Textualize/rich/issues/4028
 
+## [15.0.0] - 2026-04-12
+
+### Changed
+
+- Breaking change: Dropped support for Python3.8
+
+### Fixed
+
+- Fixed empty print ignoring the `end` parameter https://github.com/Textualize/rich/pull/4075
+- Fixed `Text.from_ansi` removing newlines https://github.com/Textualize/rich/pull/4076
+- Fixed `FileProxy.isatty` not proxying https://github.com/Textualize/rich/pull/4077
+- Fixed inline code in Markdown tables cells https://github.com/Textualize/rich/pull/4079
+
+## [14.3.4] - 2026-04-11
+
+### Changed
+
+- Improved import time with lazy loading https://github.com/Textualize/rich/pull/4070
+- Changed link id generation to avoid random number generation at runtime https://github.com/Textualize/rich/pull/3845
+
 ## [14.3.3] - 2026-02-19
 
 ### Fixed
@@ -2201,6 +2221,10 @@ Major version bump for a breaking change to `Text.stylize signature`, which corr
 
 - First official release, API still to be stabilized
 
+[15.0.0]: https://github.com/textualize/rich/compare/v14.3.4...v15.0.0
+[14.3.4]: https://github.com/textualize/rich/compare/v14.3.3...v14.3.4
+[14.3.3]: https://github.com/textualize/rich/compare/v14.3.2...v14.3.3
+[14.3.2]: https://github.com/textualize/rich/compare/v14.3.1...v14.3.2
 [14.3.1]: https://github.com/textualize/rich/compare/v14.3.0...v14.3.1
 [14.3.0]: https://github.com/textualize/rich/compare/v14.2.0...v14.3.0
 [14.2.0]: https://github.com/textualize/rich/compare/v14.1.0...v14.2.0
